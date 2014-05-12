@@ -112,6 +112,6 @@ func main() {
 		fmt.Printf("%v", v)
 		i = i + 1
 	}
-	fmt.Printf("\nFinished Example Processing")
+	fmt.Printf("\nFinished Example Processing Using Tabulate")
 
 }
