@@ -22,6 +22,7 @@ func main() {
 	go pnp.Numbers(n2d, 1)
 	//go pnp.Delay(n2d, d2c, 2) // does not work- first few appear OK; then errors
 	go pnp.ConvertIntStr(n2d, str1)
+	//go pnp.ConvertIntStr(d2c, str1)
 	//pnp.Console(c2c, "List of Numbers", 20)  does not work as expected
 	var v string
 	var i int = 0
