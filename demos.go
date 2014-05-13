@@ -16,11 +16,13 @@ func main() {
 
 	// this network generates a sequence of increasing numbers 0 .. 10
 	fmt.Printf("Generate a sequence of increasing numbers 1 .. 10\n ")
-	var n2c = make(chan int)
+	var n2d = make(chan int)
+	//	var d2c = make(chan int)
 	var str1 = make(chan string)
-	go pnp.Numbers(n2c, 1)
-	go pnp.ConvertIntStr(n2c, str1)
-	//	go pnp.Console(c2c, "List of Numbers", 20)  does not work as expected
+	go pnp.Numbers(n2d, 1)
+	//go pnp.Delay(n2d, d2c, 2) // does not work- first few appear OK; then errors
+	go pnp.ConvertIntStr(n2d, str1)
+	//pnp.Console(c2c, "List of Numbers", 20)  does not work as expected
 	var v string
 	var i int = 0
 	for i < 10 {
@@ -28,6 +30,7 @@ func main() {
 		fmt.Printf("%v", v)
 		i = i + 1
 	}
+
 	fmt.Printf("\n")
 	fmt.Printf("Generate the running sum of a sequence of increasing numbers 0 .. 9\n ")
 	n2i := make(chan int)
